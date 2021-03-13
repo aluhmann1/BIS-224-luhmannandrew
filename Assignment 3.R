@@ -28,7 +28,6 @@ COUNTS1 <- mutate(COUNTS1,cand_cons=case_when(candidate =="JOSEPH R BIDEN" ~ "BI
                                               candidate == "TRUMP AND PENCE" ~ "TRUMP",
                                               TRUE ~ "OTHER"))
 CAND_CONS <- levels(as.factor(COUNTS1$cand_cons))
-CAND_CONS
 RESULTS <- group_by(COUNTS1, state, cand_cons)
 COUNTS2 <- summarise(RESULTS, votes = sum(votes))
 n_COUNTS2 <- length(COUNTS2$state)
