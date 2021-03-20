@@ -33,14 +33,8 @@ for (i in 1:n) {
     AAPL$red[i] <- AAPL$daychange[i]
   }
 }
-for (i in 1:n) {
-  if(AAPL$green[i]==0.000000) {
-    AAPL$green[i] <- ""[i]
-  } else {
-    AAPL$red[i] <- AAPL$daychange[i]
-  }
-}
 AAPL[AAPL == 0.000000] <- NA
+nochanges <- AAPL$nochange <- 0
 #This makes AAPL$nochange = NA, so set it back to 0.
 #I tried for 50 minutes to make a legend! Alas.
 p <- ggplot(data = AAPL,
