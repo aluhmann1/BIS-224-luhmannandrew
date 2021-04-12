@@ -23,3 +23,4 @@ p + geom_smooth(se=F, mapping = aes(group = state)) +
        y = "Deaths",
        title = "COVID-19 Deaths vs Cases for PA as of 2021-02-11") + 
   geom_point() + geom_text_repel(data = pac, aes(label = county), size = 4)
+
